@@ -153,3 +153,47 @@ Sure, here are the steps to perform linear regression in Python using libraries 
    ```
 
 These are the basic steps for performing linear regression in Python. You can further enhance your model by adding more features, handling outliers, or trying different regression techniques.
+
+
+## Evaluating Linear Regression Model
+Evaluating a linear regression model is crucial to understand its performance and reliability in predicting outcomes. Here are some common evaluation techniques for linear regression models:
+
+1. **Mean Squared Error (MSE)**:
+   - Calculates the average squared difference between the predicted values and the actual values.
+   - Provides a measure of the model's accuracy, where lower values indicate better performance.
+   - Computed as:
+     \[ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
+   where \( n \) is the number of observations, \( y_i \) is the actual value, and \( \hat{y}_i \) is the predicted value for observation \( i \).
+
+2. **Root Mean Squared Error (RMSE)**:
+   - The square root of the MSE, providing an interpretable measure in the same units as the target variable.
+   - Gives a sense of the average magnitude of the errors.
+   - Computed as:
+     \[ \text{RMSE} = \sqrt{\text{MSE}} \]
+
+3. **R-squared (R²)**:
+   - Measures the proportion of the variance in the dependent variable that is predictable from the independent variables.
+   - Ranges from 0 to 1, where 1 indicates a perfect fit.
+   - Computed as:
+     \[ R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2} \]
+   where \( \bar{y} \) is the mean of the observed data.
+
+4. **Adjusted R-squared**:
+   - A modified version of R-squared that adjusts for the number of predictors in the model.
+   - Penalizes excessive use of variables that do not improve the model's performance.
+   - Provides a better indication of the model's goodness of fit when comparing models with different numbers of predictors.
+
+5. **Residual Analysis**:
+   - Examination of the residuals (the differences between observed and predicted values).
+   - Plotting residuals against predicted values or independent variables to check for patterns.
+   - Ideally, residuals should be randomly distributed around zero with constant variance.
+
+6. **Durbin-Watson Statistic**:
+   - Measures autocorrelation in the residuals.
+   - Values close to 2 indicate no autocorrelation, while values significantly different from 2 may indicate autocorrelation.
+
+7. **Feature Importance**:
+   - Assessing the significance of each independent variable's contribution to the model.
+   - Using coefficients, p-values, or feature importance scores to understand variable importance.
+
+By using a combination of these evaluation techniques, you can gain a comprehensive understanding of your linear regression model's performance and identify areas for improvement.
