@@ -1,2 +1,3 @@
 # LinearRegression
-This Github Project contains information on the Linear Regression Model
+# What is Machine Learning Model?
+A machine learning model is a program that can find patterns or make decisions from a previously unseen dataset.
