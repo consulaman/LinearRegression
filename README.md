@@ -82,3 +82,74 @@ Linear regression is widely used for various purposes, including:
     * Using regressive random forests to carry out regression
     * Boosting: To improve the accuracy of the model
 * <b>Step 8</b>: Prediction by linear regression model!
+
+## Steps for creating Linear Regression Model using Python
+Sure, here are the steps to perform linear regression in Python using libraries like NumPy, pandas, and scikit-learn:
+
+1. **Import Libraries:**
+   ```python
+   import numpy as np
+   import pandas as pd
+   from sklearn.model_selection import train_test_split
+   from sklearn.linear_model import LinearRegression
+   from sklearn.metrics import mean_squared_error, r2_score
+   ```
+
+2. **Prepare Data:**
+   Load your dataset into a pandas DataFrame. Make sure your data is clean and formatted correctly. Separate your features (independent variables) and target variable (dependent variable).
+   ```python
+   # Assuming 'df' is your DataFrame
+   X = df[['feature1', 'feature2', ...]]  # Features
+   y = df['target']  # Target variable
+   ```
+
+3. **Split Data into Training and Testing Sets:**
+   Split your data into training and testing sets to evaluate the performance of the model.
+   ```python
+   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+   ```
+
+4. **Create a Linear Regression Model:**
+   ```python
+   model = LinearRegression()
+   ```
+
+5. **Train the Model:**
+   Fit the model to the training data.
+   ```python
+   model.fit(X_train, y_train)
+   ```
+
+6. **Make Predictions:**
+   Use the trained model to make predictions on the testing data.
+   ```python
+   y_pred = model.predict(X_test)
+   ```
+
+7. **Evaluate the Model:**
+   Assess the performance of the model using evaluation metrics such as Mean Squared Error (MSE) and R-squared.
+   ```python
+   mse = mean_squared_error(y_test, y_pred)
+   r2 = r2_score(y_test, y_pred)
+   ```
+
+8. **Interpret Results:**
+   Analyze the coefficients of the model to understand the relationship between the features and the target variable.
+   ```python
+   coefficients = model.coef_
+   intercept = model.intercept_
+   ```
+
+9. **Visualization (Optional):**
+   Visualize the relationship between the features and the target variable using plots.
+   ```python
+   # Example for a single feature linear regression
+   import matplotlib.pyplot as plt
+   plt.scatter(X_test, y_test, color='black')
+   plt.plot(X_test, y_pred, color='blue', linewidth=3)
+   plt.xlabel('Feature')
+   plt.ylabel('Target')
+   plt.show()
+   ```
+
+These are the basic steps for performing linear regression in Python. You can further enhance your model by adding more features, handling outliers, or trying different regression techniques.
